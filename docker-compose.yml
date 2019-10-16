@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  frontend:
+    build:
+      context: ./app
+      dockerfile: ../docker/Dockerfile
+    command: npm run start-external
+    volumes:
+      - ./app/src:/app/src
+      - ./app/.babelrc:/app/.babelrc
+      - ./app/package.json:/app/package.json
+      - ./app/postcss.config.js:/app/postcss.config.js
+      - ./app/webpack.config.js:/app/webpack.config.js
+    ports:
+      - 8080:8080
