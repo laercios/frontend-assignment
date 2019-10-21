@@ -5,10 +5,12 @@ services:
     build:
       context: ./app
       dockerfile: ../docker/Dockerfile
-    command: npm run start-external
+    # command: npm run start-external
+    command: sleep infinity
     volumes:
       - ./app/src:/app/src
       - ./app/.babelrc:/app/.babelrc
+      - ./app/.eslintrc:/app/.eslintrc
       - ./app/package.json:/app/package.json
       - ./app/postcss.config.js:/app/postcss.config.js
       - ./app/webpack.config.js:/app/webpack.config.js

@@ -9,7 +9,6 @@
   a Learn
   img.profile(src="../images/group-copy@2x.png")
   img.group(src="../images/group-10-copy-6@2x.png")
-</div>
 </template>
 
 <script>
