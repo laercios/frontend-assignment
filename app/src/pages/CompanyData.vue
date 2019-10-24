@@ -37,17 +37,22 @@ export default {
 }
 .breadcrumb {
   grid-area: breadcrumb;
+  padding-left: 10px;
 }
 .menu {
   grid-area: menu;
+  padding-left: 10px;
 }
 .main {
   grid-area: main;
-}
-.right {
-  grid-area: right;
+  padding-right: 30%;
+  padding-left: 10px;
 }
 .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   grid-area: footer;
 }
 .grid-container {
@@ -56,9 +61,5 @@ export default {
     'breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb breadcrumb'
     'menu main main main main main'
     'footer footer footer footer footer footer';
-  background-color: #2196F3;
-  & > div {
-    padding: 5px;
-  }
 }
 </style>

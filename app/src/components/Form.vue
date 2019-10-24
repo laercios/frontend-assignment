@@ -1,5 +1,10 @@
 <template lang='pug'>
 .container
+  a.text 
+    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sapien mauris, 
+    | mattis non posuere dictum, fermentum in justo. Mauris molestie erat vitae 
+    | sem dictum tincidunt. In hac habitasse platea dictumst. Quisque quis 
+    | vulputate lorem. Quisque pellentesque sodales dui, non molestie ex ornare non.
   Field(
     name="Company Name"
     placeholder="e.g. Your Company Name"
@@ -37,5 +42,8 @@ export default {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
+}
+.text {
+  width: 60%;
 }
 </style>

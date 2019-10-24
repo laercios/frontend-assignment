@@ -39,8 +39,10 @@ input[type=text] {
 input[type=text] {
   width: 40%;
 }
-.name{
+.name {
   text-transform: uppercase;
+  font-size: 12px;
+  color: #999999;
 }
 .field {
   margin: 15px 0;

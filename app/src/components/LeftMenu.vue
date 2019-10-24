@@ -1,6 +1,6 @@
 <template lang='pug'>
 .container
-  h menu
+  a menu
 </template>
 
 <script>
