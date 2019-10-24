@@ -3,7 +3,7 @@
   .header
     TopNavigationBar
   .breadcrumb
-    Breadcrumb
+    Breadcrumb(pageName="Company Data")
   .menu
     LeftMenu
   .main
@@ -37,16 +37,16 @@ export default {
 }
 .breadcrumb {
   grid-area: breadcrumb;
-  padding-left: 10px;
+  padding-left: 90px;
 }
 .menu {
   grid-area: menu;
-  padding-left: 10px;
+  padding-left: 90px;
 }
 .main {
   grid-area: main;
-  padding-right: 30%;
-  padding-left: 10px;
+  padding-right: 20%;
+  padding-left: 20px;
 }
 .footer {
   position: fixed;

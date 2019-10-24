@@ -1,9 +1,9 @@
 <template lang='pug'>
 .container
-  a.text 
-    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sapien mauris, 
-    | mattis non posuere dictum, fermentum in justo. Mauris molestie erat vitae 
-    | sem dictum tincidunt. In hac habitasse platea dictumst. Quisque quis 
+  a
+    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sapien mauris,
+    | mattis non posuere dictum, fermentum in justo. Mauris molestie erat vitae
+    | sem dictum tincidunt. In hac habitasse platea dictumst. Quisque quis
     | vulputate lorem. Quisque pellentesque sodales dui, non molestie ex ornare non.
   Field(
     name="Company Name"
@@ -40,10 +40,8 @@ export default {
 <style scoped lang='scss'>
 .container {
   border-radius: 5px;
-  background-color: #f2f2f2;
+  border: 1px solid #ccc;
   padding: 20px;
-}
-.text {
-  width: 60%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 </style>
