@@ -25,7 +25,7 @@ export default {
     TopNavigationBar,
     LeftMenu,
     Breadcrumb,
-    Footer
+    Footer,
   },
 };
 </script>
