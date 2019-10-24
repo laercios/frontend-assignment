@@ -13,13 +13,14 @@
 </template>
 
 <script>
-import TopNavigationBar from './TopNavigationBar.vue';
-import Form from './Form.vue';
-import LeftMenu from './LeftMenu.vue';
-import Breadcrumb from './Breadcrumb.vue';
-import Footer from './Footer.vue';
+import TopNavigationBar from '../components/TopNavigationBar.vue';
+import Form from '../components/Form.vue';
+import LeftMenu from '../components/LeftMenu.vue';
+import Breadcrumb from '../components/Breadcrumb.vue';
+import Footer from '../components/Footer.vue';
 
 export default {
+  name: 'App',
   components: {
     TopNavigationBar,
     Form,

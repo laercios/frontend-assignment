@@ -9,6 +9,7 @@ services:
     command: sleep infinity
     volumes:
       - ./app/src:/app/src
+      - ./app/src/App.vue:/app/src/App.vue
       - ./app/.babelrc:/app/.babelrc
       - ./app/.eslintrc:/app/.eslintrc
       - ./app/package.json:/app/package.json

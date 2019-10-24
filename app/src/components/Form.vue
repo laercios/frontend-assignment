@@ -1,13 +1,31 @@
 <template lang='pug'>
 .container
-  Field(name="Company Name", placeholder="e.g. Your Company Name")
-  Field(name="Company Spend", placeholder="e.g. $150,000")
-  Field(name="Company Spend Ability", placeholder="e.g. $150,000 - $330,000")
+  Field(
+    name="Company Name"
+    placeholder="e.g. Your Company Name"
+    type="text"
+  )
+  Field(
+    name="Company Spend"
+    placeholder="e.g. $150,000"
+    type="text"
+  )
+  Field(
+    name="Company Spend Ability"
+    placeholder="e.g. $150,000 - $330,000"
+    type="text"
+  )
+  Field(
+    name="Notes"
+    placeholder="e.g. Good Tech Company"
+    type="textarea"
+  )
 </template>
 
 <script>
 import Field from './Field.vue';
-export default {   
+
+export default {
   components: {
     Field,
   },
