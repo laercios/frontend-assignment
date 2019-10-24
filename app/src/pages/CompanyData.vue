@@ -49,7 +49,7 @@ export default {
   padding-left: 20px;
 }
 .footer {
-  position: fixed;
+  padding-top: 100px;
   left: 0;
   bottom: 0;
   width: 100%;

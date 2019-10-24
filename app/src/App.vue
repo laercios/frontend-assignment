@@ -1,15 +1,11 @@
 <template lang="pug">
-CompanyData
+router-view(name='default')
 </template>
 
 <script>
-import CompanyData from './pages/CompanyData.vue';
 
 export default {
-  name: 'App',
-  components: {
-    CompanyData,
-  },
+  name: 'App'
 };
 </script>
 

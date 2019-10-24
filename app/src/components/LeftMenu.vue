@@ -1,8 +1,8 @@
 <template lang='pug'>
 .vertical-menu
-  a.first.active Company Data
-  a Company Table
-  a.last Company Page
+  a.first.active(href="/#/CompanyData") Company Data
+  a(href="/#/CompanyTable") Company Table
+  a.last(href="/#/CompanyPage") Company Page
 </template>
 
 <script>
