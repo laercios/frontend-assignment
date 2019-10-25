@@ -1,5 +1,5 @@
 export const currencyFormatter = (value) => {
-  let currency = value.replace(',', '').replace('$','');
+  let currency = value.replace(',', '').replace('$', '');
   currency = parseFloat(currency);
   return `$ ${currency.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}`;
 };

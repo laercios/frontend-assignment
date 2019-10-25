@@ -25,9 +25,9 @@ export const maximumValidation = (value, max, fieldName) => {
 
 export const spendAbilityValidation = (value) => {
   const values = value.replace(',', '').replace('.', '').split('-');
-  if (values.length < 2 || values.length > 2){
+  if (values.length < 2 || values.length > 2) {
     return 'Company Spend Ability must have 2 values ​​separated by -';
-  } else if (parseFloat(values[0]) > parseFloat(values[1])){
+  } if (parseFloat(values[0]) > parseFloat(values[1])) {
     return 'First value must be less than the second';
   }
   return '';

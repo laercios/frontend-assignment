@@ -12,7 +12,7 @@ div
         :error="companyNotesError"
         @blur="blur('companyNotes')"
       )
-      button SAVE
+      button(@click='submitForm') SAVE
 
   .container
     a
@@ -140,6 +140,16 @@ export default {
           );
         }
       }
+    },
+    submitForm() {
+      // Submit to server
+      // eslint-disable-next-line no-console
+      console.log({
+        companyName: store.getters['form/companyName'],
+        companySpend: store.getters['form/companySpend'],
+        companySpendAbility: store.getters['form/companySpendAbility'],
+        companySpendNotes: store.getters['form/companySpendNotes'],
+      });
     },
   },
 };
