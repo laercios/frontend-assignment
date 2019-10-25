@@ -8,6 +8,7 @@ div
         name="Notes"
         placeholder="e.g. Good Tech Company"
         type="textarea"
+        v-model="companyNotes"
       )
       button SAVE
 
@@ -21,31 +22,50 @@ div
       name="Company Name"
       placeholder="e.g. Your Company Name"
       type="text"
+      v-model="companyName"
     )
     Field(
       name="Company Spend"
       placeholder="e.g. $150,000"
       type="text"
+      v-model="companySpend"
     )
     Field(
       name="Company Spend Ability"
       placeholder="e.g. $150,000 - $330,000"
       type="text"
+      v-model="companySpendAbility"
     )
     Field(
       name="Notes"
       placeholder="e.g. Good Tech Company"
       type="textarea"
       :show="show"
+      v-model="companyNotes"
     )
 </template>
 
 <script>
 import Field from './Field.vue';
+import store from '../store';
 
 export default {
   components: {
     Field,
+  },
+  data() {
+    return {
+      companyName: '',
+      companySpend: '',
+      companySpendAbility: '',
+      companyNotes: '',
+    };
+  },
+  updated() {
+    store.dispatch('form/setCompanyName', this.companyName);
+    store.dispatch('form/setCompanySpend', this.companySpend);
+    store.dispatch('form/setCompanySpend', this.companySpendAbility);
+    store.dispatch('form/setCompanyNotes', this.companyCompanyNotes);
   },
   methods: {
     show() {

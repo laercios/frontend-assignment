@@ -2,20 +2,26 @@
 .vertical-menu
   a.first(
     href="/#/CompanyData"
-    :class="[this.$router.currentRoute.path === '/CompanyData' ? 'active' : '']"
+    :class="currentPage === 'Company Data' ? 'active' : ''"
   ) Company Data
   a(
     href="/#/CompanyTable"
-    :class="[this.$router.currentRoute.path === '/CompanyTable' ? 'active' : '']"
+    :class="currentPage === 'Company Table' ? 'active' : ''"
   ) Company Table
   a.last(
     href="/#/CompanyPage"
-    :class="[this.$router.currentRoute.path === '/CompanyPage' ? 'active' : '']"
+    :class="currentPage === 'Company Page' ? 'active' : ''"
   ) Company Page
 </template>
 
 <script>
 export default{
+  props: {
+    currentPage: {
+      type: String,
+      default: '',
+    },
+  },
 };
 </script>
 

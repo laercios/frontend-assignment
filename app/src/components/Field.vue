@@ -2,15 +2,26 @@
 .field
   a.name {{ name }}
   div(v-if="type === 'textarea'")
-    textarea.input(:placeholder="placeholder" @click="show()")
+    textarea.input(
+      :placeholder="placeholder"
+      @click="show()"
+      :value="value"
+    )
   div(v-else)
-    input.input(:placeholder="placeholder" :type="type")
+    input.input(
+      :placeholder="placeholder"
+      :type="type"
+      :value="value"
+      @input="updateValue($event.target.value)"
+    )
 </template>
 
 <script>
+
 export default {
   props: {
     name: {
+      required: true,
       type: String,
       default: '',
     },
@@ -25,6 +36,15 @@ export default {
     show: {
       type: Function,
       default: () => {},
+    },
+    value: {
+      required: true,
+      type: String,
+    },
+  },
+  methods: {
+    updateValue(value) {
+      this.$emit('input', value);
     },
   },
 };

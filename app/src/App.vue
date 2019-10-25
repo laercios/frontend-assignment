@@ -3,9 +3,9 @@
   .header
     TopNavigationBar
   .breadcrumb
-    Breadcrumb(pageName="Company Data")
+    Breadcrumb(:currentPage="currentPage")
   .menu
-    LeftMenu
+    LeftMenu(:currentPage="currentPage")
   .main
     router-view(name='default')
   .footer
@@ -19,6 +19,13 @@ import LeftMenu from './components/LeftMenu.vue';
 import Breadcrumb from './components/Breadcrumb.vue';
 import Footer from './components/Footer.vue';
 
+const pageNames = {
+  '/': 'Company Data',
+  '/CompanyData': 'Company Data',
+  '/CompanyPage': 'Company Page',
+  '/CompanyTable': 'Company Table',
+};
+
 export default {
   name: 'App',
   components: {
@@ -26,6 +33,17 @@ export default {
     LeftMenu,
     Breadcrumb,
     Footer,
+  },
+  data() {
+    return {
+      currentPage: '',
+    };
+  },
+  mounted() {
+    this.currentPage = pageNames[this.$router.currentRoute.path];
+  },
+  updated() {
+    this.currentPage = pageNames[this.$router.currentRoute.path];
   },
 };
 </script>

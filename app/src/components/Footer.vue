@@ -1,19 +1,19 @@
 <template lang='pug'>
 .footer
   .links
-    a  Pricing
+    a.link  Pricing
     a  |
-    a  Blog
+    a.link  Blog
     a  |
-    a  Webinars
+    a.link  Webinars
     a  |
-    a  Events
+    a.link  Events
     a  |
-    a  Help Center
+    a.link  Help Center
     .terms
-      a  Terms and Conditions
+      a.link Terms and Conditions
       a  |
-      a  Privacy Policy
+      a.link  Privacy Policy
   .company
     a © Copyright 2019, Intricately, Inc. All Rights Reserved.
     .social-links
@@ -36,6 +36,9 @@ export default { };
 .links {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   color: #323E75;
+  a.link {
+    cursor:pointer;
+  }
 }
 .company {
   padding-top: 20px;
@@ -54,5 +57,6 @@ export default { };
   margin-left: 15px;
   width: 30px;
   height: 30px;
+  cursor:pointer;
 }
 </style>

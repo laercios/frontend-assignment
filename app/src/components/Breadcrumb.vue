@@ -1,10 +1,10 @@
 <template lang='pug'>
-  h4.location HOME / {{ pageName }}
+  h4.location HOME / {{ currentPage }}
 </template>
 <script>
 export default {
   props: {
-    pageName: {
+    currentPage: {
       type: String,
       default: '',
     },
