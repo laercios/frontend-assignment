@@ -2,7 +2,7 @@
 .field
   a.name {{ name }}
   div(v-if="type === 'textarea'")
-    textarea.input(:placeholder="placeholder")
+    textarea.input(:placeholder="placeholder" @click="show()")
   div(v-else)
     input.input(:placeholder="placeholder" :type="type")
 </template>
@@ -21,6 +21,10 @@ export default {
     type: {
       type: String,
       default: 'text',
+    },
+    show: {
+      type: Function,
+      default: () => {},
     },
   },
 };
@@ -42,7 +46,7 @@ input[type=text] {
 }
 textarea {
   width: 98%;
-  height: 200px;
+  height: 170px;
 }
 .name {
   text-transform: uppercase;

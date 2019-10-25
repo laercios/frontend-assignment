@@ -5,8 +5,8 @@ services:
     build:
       context: ./app
       dockerfile: ../docker/Dockerfile
-    # command: npm run start-external
-    command: sleep infinity
+    command: npm run start-external
+    # command: sleep infinity
     volumes:
       - ./app/src:/app/src
       - ./app/src/App.vue:/app/src/App.vue

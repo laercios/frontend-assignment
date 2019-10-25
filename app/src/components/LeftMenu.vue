@@ -1,12 +1,22 @@
 <template lang='pug'>
 .vertical-menu
-  a.first.active(href="/#/CompanyData") Company Data
-  a(href="/#/CompanyTable") Company Table
-  a.last(href="/#/CompanyPage") Company Page
+  a.first(
+    href="/#/CompanyData"
+    :class="[this.$router.currentRoute.path === '/CompanyData' ? 'active' : '']"
+  ) Company Data
+  a(
+    href="/#/CompanyTable"
+    :class="[this.$router.currentRoute.path === '/CompanyTable' ? 'active' : '']"
+  ) Company Table
+  a.last(
+    href="/#/CompanyPage"
+    :class="[this.$router.currentRoute.path === '/CompanyPage' ? 'active' : '']"
+  ) Company Page
 </template>
 
 <script>
-export default{};
+export default{
+};
 </script>
 
 <style scoped lang='scss'>

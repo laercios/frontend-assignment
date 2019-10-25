@@ -1,30 +1,43 @@
 <template lang='pug'>
-.container
-  a
-    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sapien mauris,
-    | mattis non posuere dictum, fermentum in justo. Mauris molestie erat vitae
-    | sem dictum tincidunt. In hac habitasse platea dictumst. Quisque quis
-    | vulputate lorem. Quisque pellentesque sodales dui, non molestie ex ornare non.
-  Field(
-    name="Company Name"
-    placeholder="e.g. Your Company Name"
-    type="text"
-  )
-  Field(
-    name="Company Spend"
-    placeholder="e.g. $150,000"
-    type="text"
-  )
-  Field(
-    name="Company Spend Ability"
-    placeholder="e.g. $150,000 - $330,000"
-    type="text"
-  )
-  Field(
-    name="Notes"
-    placeholder="e.g. Good Tech Company"
-    type="textarea"
-  )
+div
+  modal(name="notes")
+    .container-modal
+      .close-modal(@click.stop="hide()")
+        span x
+      Field(
+        name="Notes"
+        placeholder="e.g. Good Tech Company"
+        type="textarea"
+      )
+      button SAVE
+
+  .container
+    a
+      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sapien mauris,
+      | mattis non posuere dictum, fermentum in justo. Mauris molestie erat vitae
+      | sem dictum tincidunt. In hac habitasse platea dictumst. Quisque quis
+      | vulputate lorem. Quisque pellentesque sodales dui, non molestie ex ornare non.
+    Field(
+      name="Company Name"
+      placeholder="e.g. Your Company Name"
+      type="text"
+    )
+    Field(
+      name="Company Spend"
+      placeholder="e.g. $150,000"
+      type="text"
+    )
+    Field(
+      name="Company Spend Ability"
+      placeholder="e.g. $150,000 - $330,000"
+      type="text"
+    )
+    Field(
+      name="Notes"
+      placeholder="e.g. Good Tech Company"
+      type="textarea"
+      :show="show"
+    )
 </template>
 
 <script>
@@ -33,6 +46,14 @@ import Field from './Field.vue';
 export default {
   components: {
     Field,
+  },
+  methods: {
+    show() {
+      this.$modal.show('notes');
+    },
+    hide() {
+      this.$modal.hide('notes');
+    },
   },
 };
 </script>
@@ -43,5 +64,16 @@ export default {
   border: 1px solid #ccc;
   padding: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.close-modal {
+  float: right;
+  cursor:pointer;
+}
+button {
+  float: right;
+  text-transform: uppercase;
+}
+.container-modal {
+ padding: 10px;
 }
 </style>
