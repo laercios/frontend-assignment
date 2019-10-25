@@ -7,13 +7,17 @@
       @click="show()"
       :value="value"
     )
+    .error-message(v-if="error") {{error}}
   div(v-else)
     input.input(
       :placeholder="placeholder"
       :type="type"
       :value="value"
+      :class="error ? 'error-border-field' : ''"
       @input="updateValue($event.target.value)"
+      @blur="emitBlur"
     )
+    .error-message(v-if="error") {{error}}
 </template>
 
 <script>
@@ -37,14 +41,26 @@ export default {
       type: Function,
       default: () => {},
     },
+    blur: {
+      type: Function,
+      default: () => {},
+    },
     value: {
       required: true,
       type: String,
+    },
+    error: {
+      required: false,
+      type: String,
+      default: '',
     },
   },
   methods: {
     updateValue(value) {
       this.$emit('input', value);
+    },
+    emitBlur(value) {
+      this.$emit('blur', value);
     },
   },
 };
@@ -64,6 +80,9 @@ export default {
 input[type=text] {
   width: 40%;
 }
+input.error-border-field {
+  border: 1px solid red;
+}
 textarea {
   width: 98%;
   height: 170px;
@@ -76,5 +95,15 @@ textarea {
 }
 .field {
   margin: 15px 0;
+}
+.error-message {
+  height: 20px;
+  font-size: 12px;
+  margin-top: 4px;
+  text-align: left;
+  padding-left: 4px;
+  color: red;
+  text-transform: capitalize;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 </style>
